@@ -7,8 +7,15 @@
 # Represent the two outcomes of each flip as "H" or "T"
 
 def coin_flips(n):
-    # Write code here
-    pass
+	if n == 1:
+		return ["T", "H"]
 
-# print(coinFlips(2)) 
+	already_flipped = coin_flips(n - 1)
+	history_plus_heads = list(el + "H" for el in already_flipped)
+	history_plus_tails = list(el + "T" for el in already_flipped)
+	
+	return history_plus_heads + history_plus_tails
+
+print("two flips: ", coin_flips(2))
+print("four flips: ", coin_flips(4))
 # => ["HH", "HT", "TH", "TT"]

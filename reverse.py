@@ -4,16 +4,18 @@
 # Write a recursive function called `reverse` that accepts a ss and returns a reversed ss.
 
 def reverse(ss):
-    # Write code here
-    pass
+	if len(ss) < 2:
+		return ss
 
-# print(reverse("")) 
+	return reverse(ss[1:]) + ss[0]
+
+print(reverse("")) 
 # => ""
-# print(reverse("a")) 
+print(reverse("a")) 
 # => "a"
-# print(reverse("ab")) 
+print(reverse("ab")) 
 # => "ba"
-# print(reverse("computer")) 
+print(reverse("computer")) 
 # => "retupmoc"
-# print(reverse(reverse("computer"))) 
+print(reverse(reverse("computer"))) 
 # => "computer"
